@@ -1,0 +1,32 @@
+<%
+    ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "jack", "queen", "king", "ace"]
+    suits = ["clubs", "diamonds", "hearts", "spades"]
+
+    deck = []
+    for rank in ranks
+        for suit in suits
+            card = "#{rank}_of_#{suit}"
+            deck.push(card)
+        end
+    end
+
+    #shuffle the deck
+    shuffle_deck = deck.shuffle
+    hand = shuffle_deck[0,10]
+%>
+
+<%#=hand%>
+
+<h1> Welcome to the ENTR-451 Casino! </h1>
+
+<% for card in hand %>
+<img src="/images/cards/<%= card%>.svg"<>
+<% end %>
+
+<!--
+<p>2 of people</p>
+<p>3 of clubs</p>
+<p>ace of spades</p>
+<p>queen of spades</p>
+<p>ace of hearts</p>
+-->
